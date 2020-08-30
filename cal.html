@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Title</title>
+    <link href="./static/css/main.css" rel="stylesheet">
+    <script src="./static/js/main.js"></script>
+    <script src="./static/js/locales-all.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+                console.log("it works");
+                var initialLocaleCode = 'en';
+                var calendarE1 = document.getElementById('calendar');
+                var calendar = new FullCalendar.Calendar(calendarE1,{
+                    headerToolbar:{},
+                    initialDate:'2020-08-30',
+                    locale: initialLocaleCode,
+                    editable:false,
+                    selectable:true,
+                    navLinks:false,
+
+                    events:[
+                        {title: '陈嘉华',
+                        start: '2020-08-03',
+                        order: 1,
+                        textColor: 'black',
+                        backgroundColor:'white',
+                        borderColor:'white'
+                        },
+                        {title: '17620614189',
+                        start: '2020-08-03',
+                        order: 2,
+                        textColor: 'black',
+                        backgroundColor:'white',
+                        borderColor:'white',
+                        },
+                    ],
+                    eventOrder: 'order',
+                });
+        calendar.render();
+        });
+    </script>
+    <style>
+        #calendar {
+        max-width: 700px;
+        margin: 40px auto;
+        padding: 0 10px;
+  }
+
+    </style>
+</head>
+<body>
+<div id='calendar'></div>
+</body>
+</html>
